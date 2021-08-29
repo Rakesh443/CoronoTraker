@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>Corona Tracker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  </head>
+
+  <body>
+  
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4" th:text="${totalCases}"></h1>
+    <p class="lead">Total Cases.</p>
+  </div>
+</div>
+    
+    
+    <table>
+      <tr>
+        <th>Country</th>
+        <th>State</th>
+        <th>Total Cases</th>
+      </tr>
+      <tr th:each="prod : ${test}">
+        <td th:text="${prod.country}"></td>
+        <td th:text="${prod.state}">NA</td>
+        <td th:text="${prod.totalCases}">0</td>
+      </tr>
+    </table>
+  
+  </body>
+
+</html>
